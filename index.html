@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Hex Breach</title>
+</head>
+
+<body>
+    <div class="monitor">
+        <div class="screen">
+            <div class="ui">
+                <div class="topbar">
+                    <div class="topbar-right">
+                        <button class="settings-button" id="settingsButton" title="Settings">
+                            ⚙
+                        </button>
+                    </div>
+                </div>
+
+                <div class="images">
+                    <div class="image-panel">
+                        <div class="image-title">IMAGE A</div>
+                        <div id="gridA" class="hex-grid"></div>
+                    </div>
+
+                    <div class="image-panel">
+                        <div class="image-title">IMAGE B</div>
+                        <div id="gridB" class="hex-grid"></div>
+                    </div>
+                </div>
+
+                <div class="game-info">
+                    <div class="found">
+                        FOUND: <span id="foundCount">0</span>/<span id="totalDiffs">4</span>
+                    </div>
+
+                    <div class="strikes">
+                        STRIKES LEFT:
+                        <span id="strikesLeft">2</span>
+                    </div>
+                </div>
+
+                <div class="timer-container">
+                    <div class="timer-bar">
+                        <div id="timerFill" class="timer-fill"></div>
+                    </div>
+
+                    <div class="timer-text">
+                        <span> TIME REMAINING </span>
+                        <span id="timerText"> 30.0s </span>
+                    </div>
+                </div>
+
+                <div class="bottom">
+                    <div>[CLICK] SELECT MEMORY CELL</div>
+
+                    <button class="restart" onclick="startGame()">[ RESTART ]</button>
+                </div>
+            </div>
+
+            <!-- GAME OVER MESSAGE -->
+            <div id="gameMessage" class="game-message">
+                <div class="message-box">
+                    <div id="messageTitle" class="message-title">BREACH COMPLETE</div>
+
+                    <div id="messageSubtitle" class="message-subtitle">
+                        MEMORY INTEGRITY VERIFIED
+                    </div>
+                </div>
+            </div>
+
+            <!-- SETTINGS MODAL -->
+            <div id="settingsOverlay" class="settings-overlay">
+                <div class="settings-modal">
+                    <div class="settings-title">
+                        <span> SYSTEM SETTINGS </span>
+
+                        <button id="settingsClose" class="settings-close">×</button>
+                    </div>
+
+                    <div class="setting-row">
+                        <label class="setting-label" for="timerSetting">
+                            TIMER DURATION
+                        </label>
+
+                        <div class="timer-input-row">
+                            <input id="timerSetting" class="timer-input" type="number" min="1" max="999" value="30" />
+                            <span class="seconds-label"> SEC </span>
+                        </div>
+                    </div>
+
+                    <div class="settings-actions">
+                        <button id="settingsCancel" class="settings-action">
+                            CANCEL
+                        </button>
+
+                        <button id="settingsApply" class="settings-action primary">
+                            APPLY
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="./script.js" type="text/javascript"></script>
+</body>
+
+</html>
